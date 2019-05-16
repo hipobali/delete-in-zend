@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link href="bst/css/bootstrap.css" rel="stylesheet">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/test">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<body>
+<a href="/test" class="btn btn-primart btn-block">Click</a>
+<div class="container">
+    <div class="row">
+         <div class="col-md-8">
+         <div class="container">
+    <div class="card shadow">
+    <div class="card-header">
+    Data
+    </div>
+    <div class="card-body">
+      <div class="table">
+         <table class="table-hover">
+       <tr>
+       <th>Id</th>
+       <th>Name</th>
+       <th>Email</th>
+       <th>Address</th>
+       <th>Phone</th>
+       <th>Edit</th>
+       <th>Delete</th>
+       </tr>
+       <?php foreach($this->studentData as $key=>$value){ ?>
+    <tr>
+        <td><?php echo $value['St_id'];?></td>
+        <td><?php echo $value['St_name'];?></td>
+        <td><?php echo $value['St_email'];?></td>
+        <td><?php echo $value['St_address'];?></td>
+        <td><?php echo $value['St_phone'];?></td>
+        <td><button src="#" class="btn btn-primary btn-sm" > Edit</button></td>
+        <td><button  class="btn btn-danger btn-sm" ><a href="/index?id=<?php echo $value['St_id']?>" >Delete</a></button></td>
+    </tr>
+<?php } ?>
+         </table>
+      </div>
+    </div>
+    </div>
+    </div>
+         </div>
+             <div class="col-md-4">
+                 <div class="card shadow">
+                    <div class="card-header">
+                         Student Record
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/">
+                             <div class="form-group">
+                             <label for="name">Name</label>
+                             <input type="text" name="name" id="name" class="form-control">
+                             </div>
+                             <div class="form-group">
+                             <label for="email">Email</label>
+                             <input type="text" name="email" id="email" class="form-control">
+                             </div>
+                             <div class="form-group">
+                             <label for="address">Address</label>
+                             <input type="text" name="address" id="address" class="form-control">
+                             </div>
+                             <div class="form-group">
+                             <label for="phone">Phone Number</label>
+                             <input type="number" name="phone" class="form-control" id="phone">
+                             </div>
+                             <div class="form-group">
+                             <button type="submit" class="btn btn-primary btn-block">Save</button>      
+                             </div>
+                         </form>
+                    </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+<script src="bst/js/bootstrap.js"></script>
+</body>
+</html>
+
